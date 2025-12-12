@@ -36,24 +36,24 @@ docker run --name url-shortener-db \
   -e POSTGRES_PASSWORD=shortener_password \
   -e POSTGRES_DB=url_shortener_db \
   -p 5432:5432 -d postgres:16
-
+```
 ### 3. Install Dependencies & Migrate
 # Install packages using the corrected pyproject.toml
 ```bash
 poetry install
-
+```
 # Activate the virtual environment
 ```bash
 poetry shell
-
+```
 # Apply all database migrations via Alembic
 ```bash
 alembic upgrade head
-
+```
 ### 4. Run the Application
 ```bash
 uvicorn main:app --reload
-
+```
 ## The API is now accessible at http://localhost:8000.
 API Endpoints
 The system is defined by four core user stories. All routes comply with RESTful Naming Conventions (plural nouns, using HTTP verbs).
